@@ -69,14 +69,45 @@
 
 # Delete existing data, so you'll start fresh each time this script is run.
 # Use `Model.destroy_all` code.
-# TODO!
+
+Studio.destroy_all
+Movie.destroy_all
+Actor.destroy_all
+Role.destroy_all
 
 # Generate models and tables, according to the domain model.
-# TODO!
 
 # Insert data into the database that reflects the sample data shown above.
 # Do not use hard-coded foreign key IDs.
-# TODO!
+
+new_studio = Studio.new
+
+new_studio["name"] = "Warner Bros."
+puts new_studio.save
+
+batman_begins = Movie.new
+
+batman_begins["title"] = "Batman Begins"
+batman_begins["year_released"] = "2005"
+batman_begins["rated"] = "PG-13"
+batman_begins["studio_id"] = new_studio["id"]
+puts batman_begins.save
+
+dark_knight = Movie.new
+
+dark_knight["title"] = "The Dark Knight"
+dark_knight["year_released"] = "2008"
+dark_knight["rated"] = "PG-13"
+dark_knight["studio_id"] = new_studio["id"]
+puts dark_knight.save
+
+knight_rises = Movie.new
+
+knight_rises["title"] = "The Dark Rises"
+knight_rises["year_released"] = "2012"
+knight_rises["rated"] = "PG-13"
+knight_rises["studio_id"] = new_studio["id"]
+puts knight_rises.save
 
 # Prints a header for the movies output
 puts "Movies"
@@ -84,13 +115,22 @@ puts "======"
 puts ""
 
 # Query the movies data and loop through the results to display the movies output.
-# TODO!
+movie_studio = Movie.where({"studio_id" => new_studio["id"]})
+
+for movie in movie_studio
+    title = movie["title"]
+    release_year = movie["year_released"]
+    rating = movie["rated"]
+    studio = movie["studio_id"]
+    puts "#{title} #{release_year} #{rating} #{studio}"
+end
 
 # Prints a header for the cast output
-puts ""
-puts "Top Cast"
-puts "========"
-puts ""
+# puts ""
+# puts "Top Cast"
+# puts "========"
+# puts ""
 
 # Query the cast data and loop through the results to display the cast output for each movie.
-# TODO!
+# bb_movie = Movie.where({"name" =>["Batman Begins"]})
+# for movie in 
