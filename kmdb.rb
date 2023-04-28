@@ -109,6 +109,22 @@ knight_rises["rated"] = "PG-13"
 knight_rises["studio_id"] = new_studio["id"]
 puts knight_rises.save
 
+cast = Actor.new
+
+cast["name"] = "Christian Bale"
+cast["name"] = "Michael Caine"
+cast["name"] = "Liam Neeson"
+cast["name"] = "Katie Holmes"
+cast["name"] = "Gary Oldman"
+cast["name"] = "Heath Ledger"
+cast["name"] = "Aaron Eckhart"
+cast["name"] = "Maggie Gyllenhaal"
+cast["name"] = "Tom Hardy"
+cast["name"] = "Joseph Gordon-Levitt"
+cast["name"] = "Anne Hathaway"
+putsbatman_begins_cast.save
+
+
 # Prints a header for the movies output
 puts "Movies"
 puts "======"
