@@ -109,20 +109,39 @@ knight_rises["rated"] = "PG-13"
 knight_rises["studio_id"] = new_studio["id"]
 puts knight_rises.save
 
-cast = Actor.new
+bb_actors = Actor.new
 
-cast["name"] = "Christian Bale"
-cast["name"] = "Michael Caine"
-cast["name"] = "Liam Neeson"
-cast["name"] = "Katie Holmes"
-cast["name"] = "Gary Oldman"
-cast["name"] = "Heath Ledger"
-cast["name"] = "Aaron Eckhart"
-cast["name"] = "Maggie Gyllenhaal"
-cast["name"] = "Tom Hardy"
-cast["name"] = "Joseph Gordon-Levitt"
-cast["name"] = "Anne Hathaway"
-putsbatman_begins_cast.save
+bb_actors["name"] = "Christian Bale"
+bb_actors["name"] = "Michael Caine"
+bb_actors["name"] = "Liam Neeson"
+bb_actors["name"] = "Katie Holmes"
+bb_actors["name"] = "Gary Oldman"
+puts bb_actors.save
+
+dk_actors = Actor.new
+
+dk_actors["name"] = "Christian Bale"
+dk_actors["name"] = "Heath Ledger"
+dk_actors["name"] = "Aaron Eckhart"
+dk_actors["name"] = "Maichael Caine"
+dk_actors["name"] = "Maggie Gyllenhaal"
+puts dk_actors.save
+
+dkr_actors = Actor.new
+
+dkr_actors["name"] = "Christian Bale"
+dkr_actors["name"] = "Gary Oldman"
+dkr_actors["name"] = "Tom Hardy"
+dkr_actors["name"] = "Joseph Gordon-Levitt"
+dkr_actors["name"] = "Anne Hathaway"
+puts dkr_actors.save
+
+# bb_roles1 = Role.new
+
+# bb_roles["movie_id"] = batman_begins["id"]
+# bb_roles["actor_id"] = bb_actors["id"]
+# bb_roles["character_name"] = "Bruce Wayne"
+# puts bb_roles1.save
 
 
 # Prints a header for the movies output
