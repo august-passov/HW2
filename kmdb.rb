@@ -86,6 +86,7 @@ new_studio = Studio.new
 
 new_studio["name"] = "Warner Bros."
 puts new_studio.save
+# dont need puts
 
 warner = Studio.find_by({"name" => "Warner Bros."})
 
@@ -187,15 +188,14 @@ puts "======"
 puts ""
 
 # Query the movies data and loop through the results to display the movies output.
-# warner = Studio.find_by({"name" => "Warner Bros."})
 movie_studio = Movie.where({"studio_id" => warner["id"]})
 
 for movie in movie_studio
     title = movie["title"]
     release_year = movie["year_released"]
     rating = movie["rated"]
-    studio = movie["studio_id"]
-    puts "#{title} #{release_year} #{rating} #{studio}"
+    studio = Studio.find_by({"id" => movie["studio_id"]})
+    puts "#{title} #{release_year} #{rating} #{studio["name"]}"
 end
 
 # Prints a header for the cast output
@@ -205,13 +205,12 @@ puts "========"
 puts ""
 
 # Query the cast data and loop through the results to display the cast output for each movie.
-# begins = Role.where({"movie_id" => bbegins["id"]})
 all_roles = Role.all
 for role in all_roles
-    title = role["movie_id"]
-    actor = role["actor_id"]
+    actor = Actor.find_by({"id" => role["actor_id"]}) 
+    title = Movie.find_by({"id" => role["movie_id"]})
     character = role["character_name"]
-    puts "#{title} #{actor} #{character}"
+    puts "#{title["title"]} #{actor["name"]} #{character}"
 end
 
 # for cast in begins
