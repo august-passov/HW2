@@ -159,6 +159,12 @@ actor11 = Actor.new
 actor11["name"] = "Anne Hathaway"
 actor11.save
 
+# # for next time, for current_actor in actors
+#     actor = Actor.new
+#     current_actor = actor.new["name"] 
+#     actor.save
+# end
+
 # Character Code
 bbegins = Movie.find_by({"title" => "Batman Begins"})
 bale = Actor.find_by({"name" => "Christian Bale"})
